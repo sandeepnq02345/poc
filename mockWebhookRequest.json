@@ -1,0 +1,50 @@
+{
+    "detectIntentResponseId": "ffd9a94e-17ab-4eae-bb3f-470b1b8c40c8",
+    "intentInfo": {
+        "lastMatchedIntent": "projects/clgx-idcservices-app-sbx-c9ab/locations/global/agents/32a850b3-be5f-4736-949e-1b4897326ea2/intents/1ac959d2-428a-428d-b0d8-6435d224b8ce",
+        "parameters": {
+            "given-name": {
+                "originalValue": "cameron",
+                "resolvedValue": "Cameron"
+            },
+            "location": {
+                "originalValue": "denver colorado",
+                "resolvedValue": [
+                    {
+                        "original": "denver colorado",
+                        "city": "Denver",
+                        "state": "Colorado"
+                    }
+                ]
+            },
+            "customer_options": {
+                "originalValue": "seller leads",
+                "resolvedValue": "seller leads"
+            }
+        },
+        "displayName": "customer.options",
+        "confidence": 0.93285817
+    },
+    "pageInfo": {
+        "currentPage": "projects/clgx-idcservices-app-sbx-c9ab/locations/global/agents/32a850b3-be5f-4736-949e-1b4897326ea2/flows/00000000-0000-0000-0000-000000000000/pages/START_PAGE"
+    },
+    "sessionInfo": {
+        "session": "projects/clgx-idcservices-app-sbx-c9ab/locations/global/agents/32a850b3-be5f-4736-949e-1b4897326ea2/sessions/9355c0-0b4-dba-74f-d70ff7c5a",
+        "parameters": {
+            "customer_options": "seller leads",
+            "given-name": "Cameron",
+            "location": [
+                {
+                    "original": "denver colorado",
+                    "city": "Denver",
+                    "state": "Colorado"
+                }
+            ]
+        }
+    },
+    "fulfillmentInfo": {
+        "tag": "initial-geography"
+    },
+    "text": "hello, I'm cameron, I'm interested in seller leads in denver colorado",
+    "languageCode": "en"
+}

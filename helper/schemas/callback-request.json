@@ -1,0 +1,92 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "type": "object",
+    "properties": {
+        "hasErrors": {
+            "type": "boolean"
+        },
+        "templateParameters": {
+            "type": "object",
+            "properties": {
+                "propertiesCount": {
+                    "type": [
+                        "number",
+                        "string",
+                        "null"
+                    ]
+                },
+                "minPropertyValue": {
+                    "type": [
+                        "number",
+                        "string",
+                        "null"
+                    ]
+                },
+                "maxPropertyValue": {
+                    "type": [
+                        "number",
+                        "string",
+                        "null"
+                    ]
+                },
+                "medianPropertyValue": {
+                    "type": [
+                        "number",
+                        "string",
+                        "null"
+                    ]
+                },
+                "averageRiskScore": {
+                    "type": [
+                        "number",
+                        "string",
+                        "null"
+                    ]
+                },
+                "insightPropertyValue": {
+                    "type": [
+                        "number",
+                        "string",
+                        "null"
+                    ]
+                },
+                "insightEquityValue": {
+                    "type": [
+                        "number",
+                        "string",
+                        "null"
+                    ]
+                },
+                "insightPropertyValueTrend": {
+                    "type": [
+                        "number",
+                        "string",
+                        "null"
+                    ]
+                },
+                "insightAverageRiskScore": {
+                    "type": [
+                        "number",
+                        "string",
+                        "null"
+                    ]
+                },
+                "insightPropertyValuePeakYear": {
+                    "type": [
+                        "number",
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "userId": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "hasErrors",
+        "userId",
+        "templateParameters"
+    ]
+}

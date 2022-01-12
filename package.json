@@ -1,0 +1,67 @@
+{
+  "name": "dc_dialogflow_webhook_fulfillment",
+  "version": "1.0.0",
+  "description": "Fulfillment Function for Discovery Center Dialogflow",
+  "email": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx functions-framework --target=fulfillment",
+    "dev": "cross-env NODE_ENV=local npx functions-framework --target=fulfillment",
+    "debugStart": "npx functions-framework --target=fulfillment --port 8070",
+    "test": "test",
+    "ci_build": "npm install && npm build",
+    "lint": "eslint . --fix",
+    "tunnel": "ngrok http 8080",
+    "doc": "jsdoc -d docs --configure jsconf.json ./models/index.js"
+  },
+  "publishConfig": {
+    "registry": "https://artifactory.solutions.corelogic.com/artifactory/api/npm/discovery_center_us-idcservices-npm-release-libs-local"
+  },
+  "registry": "http://artifactory.solutions.corelogic.com/artifactory/api/npm/discovery_center_us-idcservices-npm-release-virtual",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/corelogic/dc_dialogflow_webhook_fulfillment.git"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "keywords": [
+    "DataQnA",
+    "BigQuery",
+    "Fulfillment",
+    "Dialogflow"
+  ],
+  "author": "cthurston@corelogic.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/corelogic/dc_dialogflow_webhook_fulfillment/issues"
+  },
+  "homepage": "https://github.com/corelogic/dc_dialogflow_webhook_fulfillment#readme",
+  "dependencies": {
+    "@google-cloud/bigquery": "^5.2.0",
+    "@google-cloud/firestore": "^4.7.1",
+    "@google-cloud/functions-framework": "^1.7.1",
+    "@google-cloud/pubsub": "^2.5.0",
+    "ajv": "^6.12.3",
+    "axios": "^0.21.0",
+    "dotenv": "^8.2.0",
+    "firebase-admin": "^9.4.1",
+    "googleapis": "^59.0.0",
+    "hash-generator": "^0.1.0",
+    "lodash": "^4.17.20",
+    "lodash.template": "^4.5.0",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5",
+    "winston": "^3.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "jsdoc": "^3.6.7",
+    "ngrok": "^3.3.0"
+  }
+}

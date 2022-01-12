@@ -1,0 +1,62 @@
+{
+  "name": "",
+  "customer_options": "",
+  "transaction_type": {
+    "foreclosure": {
+      "status": false,
+      "start": 0,
+      "end": 12,
+      "predicate": "and"
+    },
+    "preforeclosure": {
+      "status": false,
+      "start": 0,
+      "end": 12,
+      "predicate": "and"
+    }
+  },
+  "recent_sales": false,
+  "geography": {
+    "zipcode": [],
+    "city": [],
+    "region": [],
+    "county": [],
+    "state": []
+  },
+  "risk": {
+    "scs": {
+      "status": false,
+      "min": 75,
+      "max": 100
+    },
+    "composite": {
+      "status": false,
+      "min": 75,
+      "max": 100
+    }
+  },
+  "propensity": {
+    "status": false,
+    "min": 0,
+    "max": 100,
+    "predicate": "and"
+  },
+  "ltv": {
+    "min": 0,
+    "max": 100,
+    "predicate": "and"
+  },
+  "equity": {
+    "min": 0,
+    "max": 100,
+    "predicate": "and"
+  },
+  "property": {
+    "min": 0,
+    "max": 10000000,
+    "predicate": "and"
+  },
+  "property_name": "",
+  "property_city": "",
+  "property_zipcode": ""
+}

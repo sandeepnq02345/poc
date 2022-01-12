@@ -1,0 +1,64 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "type":"object",
+    "properties":{
+      "detectIntentResponseId":{
+          "type": "string"
+      },
+      "fulfillmentInfo":{
+          "type": "object",
+          "properties": {
+                "tag":{
+                    "type": "string"
+                }
+          },
+          "required": ["tag"]
+      },
+      "intentInfo": {
+          "type": "object",
+          "properties":{
+              "lastMatchedIntent":{
+                  "type": "string"
+              },
+              "parameters":{
+                  "type": "object"
+              }    
+          }
+      },
+      "PageInfo": {
+          "type": "object",
+          "properties": {
+              "currentPage":{
+                  "type": "string"
+              },
+              "formInfo":{
+                  "type":"object",
+                  "properties": {
+                        "parameterInfo":{
+                            "type":"object"
+                        }
+                  }
+              }
+          }
+      },
+      "sessionInfo":{
+          "type": "object",
+          "properties": {
+              "session":{
+                  "type": "string"
+              },
+              "parameters":{
+                  "type": "object"
+              }
+          }
+      },
+      "messages": {
+          "type": "array"
+      }
+
+    },
+    "required":[
+      "detectIntentResponseId",
+      "fulfillmentInfo"
+    ]
+}

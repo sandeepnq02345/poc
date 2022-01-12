@@ -1,0 +1,609 @@
+{
+    "multiCheckBox": [],
+    "checkBox": [
+        "propensity",
+        "foreclosureExistFlag",
+        "preForeclosureExistFlag",
+        "risk.scs",
+        "risk.composite",
+        "risk.earthquake",
+        "risk.wildfire",
+        "risk.inlandFlood",
+        "risk.winterStorm",
+        "risk.stormSurge",
+        "risk.hurricaneWind"
+    ],
+    "dateSlider": [
+        "lienOrReleaseRecordingDate",
+        "foreclosureDate",
+        "preForeclosureDate",
+        "risk.scs",
+        "risk.composite",
+        "risk.earthquake",
+        "risk.wildfire",
+        "risk.inlandFlood",
+        "risk.winterStorm",
+        "risk.stormSurge",
+        "risk.hurricaneWind"
+    ],
+    "slider": [
+        "estimatedEquity",
+        "estimatedCombinedLoanToValue",
+        "avmValue",
+        "lienOrReleaseAmount",
+        "lienToValueRatio",
+        "propensity",
+        "risk.scs",
+        "risk.composite",
+        "risk.earthquake",
+        "risk.wildfire",
+        "risk.inlandFlood",
+        "risk.winterStorm",
+        "risk.stormSurge",
+        "risk.hurricaneWind",
+        "loss.scs",
+        "loss.composite",
+        "loss.earthquake",
+        "loss.wildfire",
+        "loss.inlandFlood",
+        "loss.winterStorm",
+        "loss.stormSurge",
+        "loss.hurricaneWind"
+    ],
+    "filterArray": [
+        "lienOrReleaseType.lienType"
+    ],
+    "filters": {
+        "propensityToSell": {
+            "hasMappings": true,
+            "isSlider": true,
+            "mappings": {
+                "VERY LOW": {
+                    "min": 1,
+                    "max": 370
+                },
+                "LOW": {
+                    "min": 371,
+                    "max": 480
+                },
+                "MODERATE": {
+                    "min": 481,
+                    "max": 600
+                },
+                "HIGH": {
+                    "min": 601,
+                    "max": 795
+                },
+                "VERY HIGH": {
+                    "min": 796,
+                    "max": 999
+                },
+                "DEFAULT": {
+                    "min": 500,
+                    "max": 599
+                }
+            },
+            "schema": {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "boolean"
+                    },
+                    "min": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 999
+                    },
+                    "max": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 999
+                    },
+                    "predicate": {
+                        "type": "string",
+                        "enum": [
+                            "or",
+                            "and"
+                        ]
+                    }
+                },
+                "required": [
+                    "min",
+                    "max",
+                    "status",
+                    "predicate"
+                ]
+            },
+            "sliderRange": {
+                "min": 1,
+                "max": 999
+            },
+            "defaultRange": {
+                "min": 500,
+                "max": 599
+            },
+            "successResponse": "modifyFilters",
+            "useCases": [
+                "sellerLeads"
+            ]
+        },
+        "equity": {
+            "hasMappings": false,
+            "isSlider": true,
+            "sliderDisplayName": "equity",
+            "schema": {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
+                "properties": {
+                    "min": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 100
+                    },
+                    "max": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 100
+                    },
+                    "predicate": {
+                        "type": "string",
+                        "enum": [
+                            "or",
+                            "and"
+                        ]
+                    }
+                },
+                "required": [
+                    "min",
+                    "max",
+                    "predicate"
+                ]
+            },
+            "sliderRange": {
+                "min": 0,
+                "max": 100
+            },
+            "defaultRange": {
+                "min": 0,
+                "max": 100
+            },
+            "useCases": [
+                "sellerLeads",
+                "involuntaryLiens"
+            ]
+        },
+        "propertyValue": {
+            "hasMappings": false,
+            "isSlider": true,
+            "sliderDisplayName": "property value",
+            "schema": {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
+                "properties": {
+                    "min": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "max": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "predicate": {
+                        "type": "string",
+                        "enum": [
+                            "or",
+                            "and"
+                        ]
+                    }
+                },
+                "required": [
+                    "predicate"
+                ]
+            },
+            "sliderRange": {
+                "min": 0,
+                "max": 10000000
+            },
+            "defaultRange": {
+                "min": 0,
+                "max": 10000000
+            },
+            "successResponse": "modifyFilters",
+            "useCases": [
+                "sellerLeads",
+                "involuntaryLiens"
+            ]
+        },
+        "involuntaryLiens": {
+            "hasMappings": false,
+            "isSlider": false,
+            "schema": {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "array",
+                "enum": [
+                    "hoa",
+                    "mechanics",
+                    "tax",
+                    "multiple"
+                ]
+            },
+            "lienTypes": [
+                "hoa",
+                "mechanics",
+                "tax"
+            ],
+            "capturedLienTypes": [
+                "hoa",
+                "mechanics",
+                "tax",
+                "multiple",
+                "new",
+                "involuntary"
+            ],
+            "useCases": [
+                "involuntaryLiens"
+            ]
+        },
+        "loanToValue": {
+            "hasMappings": false,
+            "isSlider": true,
+            "sliderDisplayName": "loan-to-value",
+            "schema": {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
+                "properties": {
+                    "min": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 100
+                    },
+                    "max": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 100
+                    },
+                    "predicate": {
+                        "type": "string",
+                        "enum": [
+                            "or",
+                            "and"
+                        ]
+                    }
+                },
+                "required": [
+                    "min",
+                    "max",
+                    "predicate"
+                ]
+            },
+            "sliderRange": {
+                "min": 0,
+                "max": 100
+            },
+            "defaultRange": {
+                "min": 0,
+                "max": 100
+            },
+            "useCases": [
+                "sellerLeads",
+                "involuntaryLiens"
+            ]
+        },
+        "lienAmount": {
+            "hasMappings": false,
+            "isSlider": true,
+            "sliderDisplayName": "lien amount",
+            "schema": {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
+                "properties": {
+                    "min": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "max": {
+                        "type": "integer",
+                        "minimum": 0
+                    }
+                },
+                "predicate": {
+                    "type": "string",
+                    "enum": [
+                        "or",
+                        "and"
+                    ]
+                },
+                "required": [
+                    "min",
+                    "max",
+                    "predicate"
+                ]
+            },
+            "sliderRange": {
+                "min": 0,
+                "max": 10000000
+            },
+            "defaultRange": {
+                "min": 0,
+                "max": 10000000
+            },
+            "useCases": [
+                "involuntaryLiens"
+            ]
+        },
+        "lienToValueRatio": {
+            "hasMappings": false,
+            "isSlider": true,
+            "sliderDisplayName": "lien-to-value ratio",
+            "isLayer": false,
+            "hasOtherProperties": false,
+            "schema": {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
+                "properties": {
+                    "min": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 100
+                    },
+                    "max": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 100
+                    },
+                    "predicate": {
+                        "type": "string",
+                        "enum": [
+                            "or",
+                            "and"
+                        ]
+                    }
+                },
+                "required": [
+                    "min",
+                    "max",
+                    "predicate"
+                ]
+            },
+            "sliderRange": {
+                "min": 0,
+                "max": 100
+            },
+            "defaultRange": {
+                "min": 0,
+                "max": 100
+            }
+        },
+        "lienOrReleaseRecordingDate": {
+            "hasMappings": false,
+            "isSlider": true,
+            "sliderDisplayName": "lien recording date",
+            "isLayer": false,
+            "hasOtherProperties": false,
+            "schema": {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
+                "properties": {
+                    "startDate": {
+                        "type": "object",
+                        "properties": {
+                            "date": {
+                                "type": "integer"
+                            },
+                            "month": {
+                                "type": "integer"
+                            },
+                            "year": {
+                                "type": "integer"
+                            }
+                        },
+                        "required": [
+                            "date",
+                            "month",
+                            "year"
+                        ]
+                    },
+                    "endDate": {
+                        "type": "object",
+                        "properties": {
+                            "date": {
+                                "type": "integer"
+                            },
+                            "month": {
+                                "type": "integer"
+                            },
+                            "year": {
+                                "type": "integer"
+                            }
+                        },
+                        "required": [
+                            "date",
+                            "month",
+                            "year"
+                        ]
+                    },
+                    "predicate": {
+                        "type": "string",
+                        "enum": [
+                            "or",
+                            "and"
+                        ]
+                    }
+                },
+                "required": [
+                    "startDate",
+                    "endDate",
+                    "predicate"
+                ]
+            }
+        },
+        "preforeclosureDate": {
+            "hasMappings": false,
+            "isSlider": true,
+            "sliderDisplayName": "pre-foreclosure date",
+            "associatedFlag": "preForeclosureExistFlag",
+            "isLayer": false,
+            "hasOtherProperties": false,
+            "schema": {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
+                "properties": {
+                    "startDate": {
+                        "type": "string"
+                    },
+                    "endDate": {
+                        "type": "string"
+                    },
+                    "predicate": {
+                        "type": "string",
+                        "enum": [
+                            "or",
+                            "and"
+                        ]
+                    }
+                },
+                "required": [
+                    "startDate",
+                    "endDate",
+                    "predicate"
+                ]
+            }
+        },
+        "foreclosureDate": {
+            "hasMappings": false,
+            "isSlider": true,
+            "sliderDisplayName": "foreclosure date",
+            "associatedFlag": "foreclosureExistFlag",
+            "isLayer": false,
+            "hasOtherProperties": false,
+            "schema": {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
+                "properties": {
+                    "startDate": {
+                        "type": "string"
+                    },
+                    "endDate": {
+                        "type": "string"
+                    },
+                    "predicate": {
+                        "type": "string",
+                        "enum": [
+                            "or",
+                            "and"
+                        ]
+                    }
+                },
+                "required": [
+                    "startDate",
+                    "endDate",
+                    "predicate"
+                ]
+            }
+        },
+        "riskScore": {
+            "hasMappings": true,
+            "isSlider": true,
+            "mappings": {
+                "LOW": {
+                    "min": 0,
+                    "max": 50
+                },
+                "MODERATE": {
+                    "min": 51,
+                    "max": 80
+                },
+                "HIGH": {
+                    "min": 81,
+                    "max": 100
+                }
+            },
+            "schema": {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "boolean"
+                    },
+                    "min": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 100
+                    },
+                    "max": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 100
+                    },
+                    "predicate": {
+                        "type": "string",
+                        "enum": [
+                            "or",
+                            "and"
+                        ]
+                    }
+                },
+                "required": [
+                    "min",
+                    "max",
+                    "status",
+                    "predicate"
+                ]
+            },
+            "sliderRange": {
+                "min": 0,
+                "max": 100
+            },
+            "defaultRange": {
+                "min": 0,
+                "max": 100
+            },
+            "successResponse": "modifyFilters",
+            "useCases": [
+                "hazards"
+            ]
+        },
+        "averageAnnualLoss": {
+            "hasMappings": false,
+            "isSlider": true,
+            "sliderDisplayName": "average annual loss",
+            "schema": {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
+                "properties": {
+                    "min": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "max": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "predicate": {
+                        "type": "string",
+                        "enum": [
+                            "or",
+                            "and"
+                        ]
+                    }
+                },
+                "required": [
+                    "predicate"
+                ]
+            },
+            "sliderRange": {
+                "min": 0,
+                "max": 10000000
+            },
+            "defaultRange": {
+                "min": 0,
+                "max": 10000000
+            },
+            "successResponse": "modifyFilters",
+            "useCases": [
+                "hazard"
+            ]
+        }
+    }
+}

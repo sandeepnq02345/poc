@@ -1,0 +1,11 @@
+{
+    "hasErrors": false,
+    "templateParameters": {
+        "averageRiskScore":"72",
+        "maxPropertyValue":"3,136,900",
+        "medianPropertyValue":"1,522,800",
+        "minPropertyValue":"1,302,200",
+        "propertyCount":"87"
+    },
+    "userId": "cthurston"
+}

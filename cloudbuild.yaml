@@ -1,0 +1,12 @@
+steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  args:
+  - functions
+  - deploy
+  - dc_dialogflow_webhook_fulfillment
+  - --source=https://source.developers.google.com/projects/q-gcp-4225-core-logic-2-21-08/repos/internal-repo/moveable-aliases/develop/paths/
+  - --trigger-http
+  - --runtime=nodejs10
+  - --entry-point=fulfillment
+  - --region=us-central1
+  - --allow-unauthenticated
